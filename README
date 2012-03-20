@@ -3,7 +3,7 @@
 - Version : 0.2
 - Date : 2012-03-19
 - Author : Pierre RASO - eX Nihili <pierre@exnihili.com>
-- Summary : PHP wrapper for Runkeeper Health Graph API
+- Summary : PHP wrapper for Runkeeper Health Graph API (http://developer.runkeeper.com/healthgraph)
 - Requires :
   + Symfony YAML (http://components.symfony-project.org/yaml/)
   + PHP cURL support (http://www.php.net/manual/en/book.curl.php)
