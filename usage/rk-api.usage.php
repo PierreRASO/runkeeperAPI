@@ -4,11 +4,11 @@ define('RUNKEEPERAPIPATH', '/path/to/runkeeperapi/install/directory/');
 define('CONFIGPATH', '/path/to/config/file/directory/');
 
 require(YAMLPATH.'lib/sfYamlParser.php');
-require(RUNKEEPERAPIPATH.'lib/runkeeperAPI.class.v2.php');
+require(RUNKEEPERAPIPATH.'lib/runkeeperAPI.class.php');
 
 /* API initialization */
 $rkAPI = new runkeeperAPI(
-		CONFIGPATH.'rk-api_sample.yml'	/* api_conf_file */
+		CONFIGPATH.'rk-api.sample.yml'	/* api_conf_file */
 		);
 if ($rkAPI->api_created == false) {
 	echo 'error '.$rkAPI->api_last_error; /* api creation problem */
