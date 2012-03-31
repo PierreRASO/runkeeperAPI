@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ERROR);
 define('YAMLPATH', '/path/to/yaml/install/directory/');
 define('RUNKEEPERAPIPATH', '/path/to/runkeeperapi/install/directory/');
 define('CONFIGPATH', '/path/to/config/file/directory/');

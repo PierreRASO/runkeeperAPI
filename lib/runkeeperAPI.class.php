@@ -8,6 +8,7 @@
 - Requires :
   + Symfony YAML (http://components.symfony-project.org/yaml/)
   + PHP cURL support (http://www.php.net/manual/en/book.curl.php)
+  + PHP json support (http://fr2.php.net/manual/en/book.json.php)
 - Usage : see /usage/rk-api.sample.php
 - ChangeLog :
   + v0.2 (2012-03-19) :
@@ -40,9 +41,12 @@ class runkeeperAPI {
 			$this->api_created = false;
 		}
 		elseif (!function_exists('curl_init')) {
-			$this->api_last_error = "No support for cURL (http://www.php.net/manual/en/book.curl.php)";
+			$this->api_last_error = "No support found for cURL (http://www.php.net/manual/en/book.curl.php)";
 			$this->api_created = false;
 		}
+		elseif (!function_exists('json_decode') || !function_exists('json_encode')) {
+			$this->api_last_error = "No support found for json (http://fr2.php.net/manual/en/book.json.php)";
+			$this->api_created = false;
 		else {
 			try {
 				$yaml = new sfYamlParser();

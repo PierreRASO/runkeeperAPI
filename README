@@ -1,3 +1,4 @@
+<?php
 /*
 - runkeeperAPI
 - Version : 0.2
@@ -7,6 +8,7 @@
 - Requires :
   + Symfony YAML (http://components.symfony-project.org/yaml/)
   + PHP cURL support (http://www.php.net/manual/en/book.curl.php)
+  + PHP json support (http://fr2.php.net/manual/en/book.json.php)
 - Usage : see /usage/rk-api.sample.php
 - Config : see /config/rl-api.sample.yml
 - ChangeLog :
@@ -16,3 +18,4 @@
   + v.01 (2012-03-03) :
     * Initial version
 */
+?>
