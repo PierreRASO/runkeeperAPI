@@ -1,8 +1,8 @@
 <?php
 /*
 - runkeeperAPI
-- Version : 0.2
-- Date : 2012-03-19
+- Version : 0.3
+- Date : 2012-04-02
 - Author : Pierre RASO - eX Nihili <pierre@exnihili.com>
 - Summary : PHP wrapper for Runkeeper Health Graph API
 - Requires :
@@ -11,6 +11,8 @@
   + PHP json support (http://fr2.php.net/manual/en/book.json.php)
 - Usage : see /usage/rk-api.sample.php
 - ChangeLog :
+  + v0.3 (2012-04-02) :
+    * fixed bug with cURL on some server which had "error :SSL certificate problem, verify that the CA cert is OK"
   + v0.2 (2012-03-19) :
     * added support for "Delete" requests in "doRunkeeperRequest" method
     * added Interfaces in API config
@@ -93,6 +95,7 @@ class runkeeperAPI {
 			CURLOPT_RETURNTRANSFER	=>	true
 		);
 		$curl = curl_init();
+		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false); /* Added to avoid "error :SSL certificate problem, verify that the CA cert is OK" */
 		curl_setopt_array($curl, $options);
 		$response     = curl_exec($curl);
 		curl_close($curl);
@@ -201,6 +204,7 @@ class runkeeperAPI {
 					break;
 			}
 			$curl = curl_init();
+			curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false); /* Added to avoid "error :SSL certificate problem, verify that the CA cert is OK" */
 			curl_setopt_array($curl, $options);
 			curl_setopt($curl, CURLOPT_HEADERFUNCTION, array(&$this,'parseHeader')); /* add callback header function to process response headers */
 			$response     = curl_exec($curl);
