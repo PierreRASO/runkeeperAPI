@@ -6,7 +6,7 @@
 - Author : Pierre RASO - eX Nihili <pierre@exnihili.com>
 - Summary : PHP wrapper for Runkeeper Health Graph API
 - Requires :
-  + Symfony YAML (http://components.symfony-project.org/yaml/)
+  + sfYaml (https://github.com/fabpot/yaml)
   + PHP cURL support (http://www.php.net/manual/en/book.curl.php)
   + PHP json support (http://fr2.php.net/manual/en/book.json.php)
 - Usage : see /usage/rk-api.sample.php
@@ -39,7 +39,7 @@ class runkeeperAPI {
 	public function __construct($api_conf_file) {
 		$this->api_conf_file = $api_conf_file;
 		if (!class_exists('sfYamlParser')) {
-			$this->api_last_error = "Symfony YAML (http://components.symfony-project.org/yaml/) not found or misconfigured";
+			$this->api_last_error = "Symfony YAML (https://github.com/fabpot/yaml) not found or misconfigured";
 			$this->api_created = false;
 		}
 		elseif (!function_exists('curl_init')) {
