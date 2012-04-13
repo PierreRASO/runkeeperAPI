@@ -1,8 +1,8 @@
 <?php
 /*
 - runkeeperAPI
-- Version : 0.3
-- Date : 2012-04-02
+- Version : 0.3.1
+- Date : 2012-04-13
 - Author : Pierre RASO - eX Nihili <pierre@exnihili.com>
 - Summary : PHP wrapper for Runkeeper Health Graph API
 - Requires :
@@ -11,6 +11,8 @@
   + PHP json support (http://fr2.php.net/manual/en/book.json.php)
 - Usage : see /usage/rk-api.sample.php
 - ChangeLog :
+  + v0.3.1 (2012-04-13) :
+    * fixed bug (missing "}")
   + v0.3 (2012-04-02) :
     * fixed bug with cURL on some server which had "error :SSL certificate problem, verify that the CA cert is OK"
   + v0.2 (2012-03-19) :
