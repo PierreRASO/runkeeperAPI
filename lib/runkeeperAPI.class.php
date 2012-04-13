@@ -49,6 +49,7 @@ class runkeeperAPI {
 		elseif (!function_exists('json_decode') || !function_exists('json_encode')) {
 			$this->api_last_error = "No support found for json (http://fr2.php.net/manual/en/book.json.php)";
 			$this->api_created = false;
+		}
 		else {
 			try {
 				$yaml = new sfYamlParser();
