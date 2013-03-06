@@ -941,3 +941,12 @@ Interfaces:
    post_to_facebook: {name: post_to_facebook, type: boolean, editable: true}
    post_to_twitter: {name: post_to_twitter, type: boolean, editable: true}
 
+ Records:
+  Name: Records
+  Media_Type: application/vnd.com.runkeeper.Records+json
+  Read:
+   Method: GET
+   Url: /records
+  Fields:
+   activity_type: {name: activity_type, type: string, editable: false}
+   stats: {name: stats, type: array, editable: false}
