@@ -107,7 +107,7 @@ class runkeeperAPI {
 			$this->api_last_error = "getRunkeeperToken: bad response";
 			return(false);
 		}
-		elseif (!$decoderesponse->error) {
+		elseif (!isset($decoderesponse->error)){
 			if ($decoderesponse->access_token) {
 				$this->access_token = $decoderesponse->access_token;
 			}
